@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_BASE = "https://kinship-backend.onrender.com";
+const API_BASE = "https://kinship-dashboard-app.onrender.com";
 
 const menuItems = [
   { id: 'dashboard', label: 'Dashboard', icon: 'grid' },
