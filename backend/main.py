@@ -18,13 +18,15 @@ app.add_middleware(
 )
 
 
+import os
+
 def get_db():
     return pymysql.connect(
-        host="be14sqnbtagrcglmv7c8-mysql.services.clever-cloud.com",
-        user="uxgotsy7klnloo5l",
-        password="4NoYBCrwGKpyOf2zaBRd",
-        database="be14sqnbtagrcglmv7c8",
-        port=3306,
+        host=os.getenv("DB_HOST", "localhost"),
+        user=os.getenv("DB_USER", "root"),
+        password=os.getenv("DB_PASSWORD", "tcs@2007"),
+        database=os.getenv("DB_NAME", "kinship_dashboard"),
+        port=int(os.getenv("DB_PORT", "3306")),
         cursorclass=pymysql.cursors.DictCursor,
     )
 
